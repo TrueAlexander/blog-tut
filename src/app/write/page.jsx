@@ -31,7 +31,7 @@ const WritePage = () => {
   const [catSlug, setCatSlug] = useState("")
 
   useEffect(() => {
-    const storage = getStorage(app);
+    const storage = getStorage(app)
     const upload = () => {
       const name = new Date().getTime() + file.name
       const storageRef = ref(storage, name)
@@ -42,7 +42,7 @@ const WritePage = () => {
         "state_changed",
         (snapshot) => {
           const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
           console.log("Upload is " + progress + "% done")
           switch (snapshot.state) {
             case "paused":
